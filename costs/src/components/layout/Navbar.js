@@ -6,7 +6,7 @@ import logo from '../../img/costs_logo.png';
 
 function Navbar () {
     return (
-        <div class={styles.navbar}>
+        <div className={styles.navbar}>
             <Container>
                 <Link to='/'>
                     <img src={logo} alt="Costs" />
