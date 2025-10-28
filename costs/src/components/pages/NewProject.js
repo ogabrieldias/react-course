@@ -25,7 +25,11 @@ function NewProject () {
                 console.log(data)
                 //redirect
                 // history.push('/projects', { message: 'Projeto criado com sucesso!' })
-                navigate('/projects', {message: 'Projeto criado com sucesso!'})
+                // navigate('/projects', {message: 'Projeto criado com sucesso!'})
+                // const state = { message: "Projeto criado com sucesso!" };
+                // navigate("/projects", {state});
+                // history('/projects',{state: {message: "Projeto criado com sucesso"}})
+                navigate("/projects", {state: { message: "Projeto criado com sucesso!" }});
                 
             })
             .catch(err => console.log(err))
