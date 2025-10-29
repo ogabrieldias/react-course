@@ -25,7 +25,7 @@
     {
       "id": "4292",
       "name": "Teste 03",
-      "budget": "60000",
+      "budget": "30000",
       "category": {
         "id": "1",
         "name": "Infra"
@@ -34,9 +34,31 @@
       "services": []
     },
     {
-      "id": "254e",
-      "name": "Novo Projeto",
-      "budget": "900000",
+      "id": "2d91",
+      "name": "Teste 04",
+      "budget": "70000",
+      "category": {
+        "id": "4",
+        "name": "Planejamento"
+      },
+      "cost": 0,
+      "services": []
+    },
+    {
+      "id": "cd07",
+      "name": "Teste 05",
+      "budget": "55555",
+      "category": {
+        "id": "4",
+        "name": "Planejamento"
+      },
+      "cost": 0,
+      "services": []
+    },
+    {
+      "id": "f8e2",
+      "name": "Teste 06",
+      "budget": "666666",
       "category": {
         "id": "2",
         "name": "Desenvolvimento"
@@ -47,19 +69,19 @@
   ],
   "categories": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Infra"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Desenvolvimento"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Design"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Planejamento"
     }
   ]
