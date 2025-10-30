@@ -7,12 +7,14 @@ import Loading from '../layout/Loading'
 import Container from '../layout/Container'
 import Message from '../layout/Message'
 import ProjectForm from '../project/ProjectForm'
+import ServiceForm from '../service/ServiceForm'
 
 function Project() {
     const { id } = useParams()
     
     const [project, setProject] = useState([])
     const [showProjectForm, setShowProjectForm] = useState(false)
+    const [showServiceForm, setShowServiceForm] = useState(false)
     const [message, setMessage] = useState()
     const [type, setType] = useState()
     
@@ -36,9 +38,9 @@ function Project() {
     }, [id])
 
     function editPost(project) {
+        setMessage('')
+        
         // budget validation
-
-
         if(project.budget < project.cost) {
             // Mensagem
             setMessage('O orçamento não pode ser menor que o custo do projeto!')
@@ -70,6 +72,10 @@ function Project() {
         setShowProjectForm(!showProjectForm)
     }
 
+    function toggleServiceForm() {
+        setShowServiceForm(!showServiceForm)
+    }
+
     return <>{project.name ? 
     <div className={styles.project_details}>
         <Container customClass="column">
@@ -94,11 +100,29 @@ function Project() {
                     </div>
                 ) : (
                     <div className={styles.project_info}>
-                        <ProjectForm handleSubmit={editPost} btnText="Concluir edição" projectData={project} />
+                        <ProjectForm handleSubmit={editPost} 
+                        btnText="Concluir edição" 
+                        projectData={project} 
+                        />
                     </div>
                 )}
-                
             </div>
+
+            <div className={styles.service_form_container}>
+                <h2>Adicione um serviço:</h2>
+                <button className={styles.btn} onClick={toggleServiceForm}>
+                    {!showServiceForm ? 'Adicionar serviço' : 'Fechar'}
+                </button>
+                <div className={styles.project_info}>
+                    {showServiceForm && (
+                        <ServiceForm />
+                    ) }
+                </div>
+            </div>
+            <h2>Serviços</h2>
+            <Container customClass="start">
+                <p>Itens de Serviços</p>
+            </Container>
         </Container>
     </div>
     :<Loading />}
